@@ -1,0 +1,120 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>DevOps Dashboard</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <div class="container">
+        <header>
+            <h1>🚀 DevOps Dashboard</h1>
+            <p>Simple Web Application</p>
+        </header>
+
+        <nav class="tabs">
+            <button class="tab-btn active" data-tab="overview">Overview</button>
+            <button class="tab-btn" data-tab="tasks">Tasks</button>
+            <button class="tab-btn" data-tab="settings">Settings</button>
+        </nav>
+
+        <main>
+            <!-- Overview Tab -->
+            <section id="overview" class="tab-content active">
+                <div class="stats-grid">
+                    <div class="stat-card">
+                        <h3>Deployments</h3>
+                        <p class="stat-value">24</p>
+                        <p class="stat-label">This month</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Uptime</h3>
+                        <p class="stat-value">99.9%</p>
+                        <p class="stat-label">Current</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Services</h3>
+                        <p class="stat-value">12</p>
+                        <p class="stat-label">Active</p>
+                    </div>
+                    <div class="stat-card">
+                        <h3>Alerts</h3>
+                        <p class="stat-value">2</p>
+                        <p class="stat-label">Pending</p>
+                    </div>
+                </div>
+            </section>
+
+            <!-- Tasks Tab -->
+            <section id="tasks" class="tab-content">
+                <div class="tasks-section">
+                    <h2>Task Manager</h2>
+                    <div class="task-input">
+                        <input type="text" id="taskInput" placeholder="Add a new task...">
+                        <button onclick="addTask()">Add</button>
+                    </div>
+                    <ul id="taskList" class="task-list">
+                        <li class="task-item">
+                            <input type="checkbox">
+                            <span>Set up CI/CD pipeline</span>
+                            <button class="delete-btn" onclick="deleteTask(this)">✕</button>
+                        </li>
+                        <li class="task-item">
+                            <input type="checkbox" checked>
+                            <span style="text-decoration: line-through;">Review deployment logs</span>
+                            <button class="delete-btn" onclick="deleteTask(this)">✕</button>
+                        </li>
+                        <li class="task-item">
+                            <input type="checkbox">
+                            <span>Configure monitoring alerts</span>
+                            <button class="delete-btn" onclick="deleteTask(this)">✕</button>
+                        </li>
+                    </ul>
+                </div>
+            </section>
+
+            <!-- Settings Tab -->
+            <section id="settings" class="tab-content">
+                <div class="settings-section">
+                    <h2>Settings</h2>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" checked>
+                            Enable notifications
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox" checked>
+                            Dark mode
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            <input type="checkbox">
+                            Email reports
+                        </label>
+                    </div>
+                    <div class="setting-item">
+                        <label>
+                            Theme:
+                            <select>
+                                <option>Blue</option>
+                                <option>Purple</option>
+                                <option>Green</option>
+                            </select>
+                        </label>
+                    </div>
+                </div>
+            </section>
+        </main>
+
+        <footer>
+            <p>&copy; 2026 DevOps Dashboard | Version 1.0</p>
+        </footer>
+    </div>
+
+    <script src="script.js"></script>
+</body>
+</html>
