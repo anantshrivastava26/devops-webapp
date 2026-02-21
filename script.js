@@ -1,3 +1,17 @@
+// Update dashboard statistics
+function updateStats() {
+    const tasks = document.querySelectorAll('.task-item');
+    const completedTasks = document.querySelectorAll('.task-item input[type="checkbox"]:checked').length;
+    const totalTasks = tasks.length;
+    const pendingTasks = totalTasks - completedTasks;
+    const progressPercent = totalTasks === 0 ? 0 : Math.round((completedTasks / totalTasks) * 100);
+    
+    document.getElementById('totalTasks').textContent = totalTasks;
+    document.getElementById('completedTasks').textContent = completedTasks;
+    document.getElementById('pendingTasks').textContent = pendingTasks;
+    document.getElementById('progressPercent').textContent = progressPercent + '%';
+}
+
 // Tab switching functionality
 document.querySelectorAll('.tab-btn').forEach(button => {
     button.addEventListener('click', function() {
@@ -39,10 +53,12 @@ function addTask() {
     taskList.appendChild(li);
     input.value = '';
     input.focus();
+    updateStats();
 }
 
 function deleteTask(button) {
     button.parentElement.remove();
+    updateStats();
 }
 
 // Allow Enter key to add task
@@ -63,6 +79,7 @@ document.addEventListener('change', function(e) {
             span.style.textDecoration = 'none';
             span.style.opacity = '1';
         }
+        updateStats();
     }
 });
 
@@ -87,4 +104,5 @@ window.addEventListener('DOMContentLoaded', function() {
             span.style.opacity = '0.6';
         }
     });
+    updateStats();
 });
