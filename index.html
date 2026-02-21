@@ -16,6 +16,7 @@
         <nav class="tabs">
             <button class="tab-btn active" data-tab="overview">Dashboard</button>
             <button class="tab-btn" data-tab="tasks">My Tasks</button>
+            <button class="tab-btn" data-tab="analytics">Analytics</button>
             <button class="tab-btn" data-tab="settings">Settings</button>
         </nav>
 
@@ -71,6 +72,39 @@
                             <button class="delete-btn" onclick="deleteTask(this)">✕</button>
                         </li>
                     </ul>
+                </div>
+            </section>
+
+            <!-- Analytics Tab -->
+            <section id="analytics" class="tab-content">
+                <div class="analytics-section">
+                    <h2>Analytics & Insights</h2>
+                    <div class="analytics-grid">
+                        <div class="analytics-card">
+                            <h3>Daily Average</h3>
+                            <p class="stat-value" id="dailyAverage">2.4</p>
+                            <p class="stat-label">tasks per day</p>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Completion Rate</h3>
+                            <p class="stat-value" id="completionRate">68%</p>
+                            <p class="stat-label">of assigned tasks</p>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Streak</h3>
+                            <p class="stat-value" id="streak">7</p>
+                            <p class="stat-label">days active</p>
+                        </div>
+                        <div class="analytics-card">
+                            <h3>Total Completed</h3>
+                            <p class="stat-value" id="totalCompleted">48</p>
+                            <p class="stat-label">all time</p>
+                        </div>
+                    </div>
+                    <div class="analytics-chart">
+                        <h3>Weekly Performance</h3>
+                        <p style="text-align: center; color: #999;">📈 Chart visualization coming soon</p>
+                    </div>
                 </div>
             </section>
 
